@@ -42,6 +42,9 @@
 		return
 
 	var/list/modifiers = params2list(params)
+	var/dragged = modifiers["drag"]
+	if(dragged && !modifiers[dragged])
+		return
 	if(modifiers["shift"] && modifiers["ctrl"])
 		CtrlShiftClickOn(A)
 		return
